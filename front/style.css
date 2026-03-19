@@ -1,0 +1,47 @@
+body {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+
+.container {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(15px);
+  padding: 30px;
+  border-radius: 20px;
+  width: 90%;
+  max-width: 500px; /* This allows the image to be large */
+  text-align: center;
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.input-box { display: flex; gap: 10px; margin-bottom: 15px; }
+
+input { flex: 1; padding: 12px; border-radius: 8px; border: none; outline: none; }
+
+button { padding: 10px 20px; border-radius: 8px; border: none; cursor: pointer; font-weight: bold; }
+
+#result {
+  display: none;
+  margin-top: 20px;
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.loader {
+  display: none;
+  border: 4px solid rgba(255,255,255,0.3);
+  border-top: 4px solid white;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+  margin: 20px auto;
+}
+
+@keyframes spin { 100% { transform: rotate(360deg); } }
