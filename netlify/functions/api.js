@@ -38,8 +38,13 @@ router.post("/generate", (req, res) => {
     }
 });
 
-// IMPORTANT: Point the app to the Netlify function path
-app.use("/.netlify/functions/api", router);
+/**
+ * 🛠️ THE FIX: 
+ * We use "/api" so that the redirect in netlify.toml 
+ * (from "/api/*" to "/.netlify/functions/api")
+ * maps correctly to this router.
+ */
+app.use("/api", router);
 
-// Export as a Netlify Function (Replaces app.listen)
+// Export as a Netlify Function
 module.exports.handler = serverless(app);
